@@ -1,0 +1,15 @@
+__pycache__
+*.dat
+*.png
+*.out
+job.target
+core*
+__pycache__
+*.ipynb_checkpoints
+config.sh
+software/wrf/WRF
+software/netcdf/netcdf-c
+software/netcdf/netcdf-fortran
+software/netcdf/netcdf-install-*
+simulation/chicago-lake-effect/em_real
+*jobnode.archive*
