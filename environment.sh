@@ -14,6 +14,7 @@ source $SiteHome/environment.sh
 export WRF_HOME="$PROJECT_HOME/software/wrf/WRF"
 export NETCDF_HOME="$PROJECT_HOME/software/netcdf/netcdf-install-$SiteName"
 export NETCDF=$NETCDF_HOME
+export HPC_TOOLKIT_HOME="$PROJECT_HOME/software/hpctoolkit/install-$SiteName"
 
 export LD_LIBRARY_PATH="$NETCDF_HOME/lib:$LD_LIBRARY_PATH"
 export PATH="$NETCDF_HOME/bin:$PATH"
@@ -22,12 +23,17 @@ export PKG_CONFIG_PATH="$NETCDF_HOME/lib/pkgconfig:$PKG_CONFIG_PATH"
 # Path to parallel HDF5 installtion with fortran support
 if [ $HDF5_HOME ]; then
 	BuildHDF5=false
+        export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:$HDF5_HOME/lib"
+	export LIBRARY_PATH="$LD_LIBRARY_PATH"
+        export CPATH="CPATH:$HDF5_HOME/include"
 else
 	BuildHDF5=true
 	export HDF5_HOME="$PROJECT_HOME/software/hdf5/HDF5/install-$SiteName"
 	export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:$HDF5_HOME/lib"
 	export LIBRARY_PATH="$LD_LIBRARY_PATH"
 fi
+
+export HDF5_PATH=$HDF5_HOME
 
 # Output information to stdout
 echo "---------------------------------------------------------------------------------------"
