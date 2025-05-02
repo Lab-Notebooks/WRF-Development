@@ -1,6 +1,6 @@
 # Setup netcdf-c
 if [ ! -d "netcdf-c" ]; then
-	git clone git@github.com:Unidata/netcdf-c.git --branch v4.4.0 netcdf-c && cd netcdf-c
+	git clone git@github.com:Unidata/netcdf-c.git --branch v4.5.0 netcdf-c && cd netcdf-c
 
 else
 	cd netcdf-c
